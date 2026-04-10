@@ -29,7 +29,7 @@ int main(void){
 
     //stats//
     int page_fault_count = 0;
-    // Sam: add TLB state here (16 entries, next insert index, tlb hit counter). //
+    // todo: add TLB state here (16 entries, next insert index, tlb hit counter). //
 
     //initialize page table//
     page_table = initialize_page_table();
@@ -61,7 +61,7 @@ int main(void){
         //{ page: 8 bits }{ offset: 8 bits } 
         int page = (address >> 8) & 0xFF;
         int offset = address & 0xFF;
-        // Sam: do TLB lookup here before checking the page table. //
+        // todo: do TLB lookup here before checking the page table. //
 
         //check if page is in table already//
         if(page_table[page].valid == 0){
