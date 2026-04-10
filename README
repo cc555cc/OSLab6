@@ -1,0 +1,18 @@
+interface_expectation(ignore these for now):
+
+int extract_page(int logical);
+int extract_offset(int logical);
+int tlb_lookup(int page);
+void tlb_insert(int page, int frame);
+int handle_page_fault(FILE *backing_store, int page);
+signed char read_value(int frame, int offset);
+
+Rest to integrate:
+- add 16-entry TLB
+- check TLB before page table lookup
+- insert page/frame into TLB after page-table hit or page fault
+- count TLB hits
+- print final Page Fault Rate and TLB Hit Rate
+- switch input reading from `addresses.txt` to `stdin` for final submission
+
+
